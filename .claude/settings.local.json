@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:supabase.com)",
+      "Bash(npx tsc *)",
+      "Bash(rm -f \"/d/logs teste/\"*.jsonl)",
+      "Read(//d/logs teste//**)",
+      "Bash(tee /tmp/tsc.log)",
+      "Bash(echo \"exit=$?\")",
+      "WebFetch(domain:www.hostgator.com.br)",
+      "Bash(npm run *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem F:\\\\ -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match 'Para|Recep|paraiso' } | Select-Object FullName)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Remove-Item *)",
+      "Bash(curl *)",
+      "WebFetch(domain:www.sismotel.com.br)",
+      "WebFetch(domain:moteltech.com.br)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git add *)"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Paraíso Recepção",
+  "version": "1.1.1",
+  "identifier": "com.paraiso.recepcao",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Paraíso Motel",
+        "width": 1024,
+        "height": 768,
+        "resizable": false,
+        "fullscreen": true,
+        "decorations": false,
+        "alwaysOnTop": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob: https:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co wss://*.supabase.co"
+    }
+  },
+  "plugins": {
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://nzwfgkcboopjkicbwyry.supabase.co/storage/v1/object/public/releases/latest.json"
+      ],
+      "dialog": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEY5NDNGRDI2OTgyMUY1RDYKUldUVzlTR1lKdjFEK2JacXZ3aXlpN1BFSjc4T01xbExVS05VaUdPWU5vdWxwd3FveTQ0Um9lSEwK",
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Paraíso Motel",
+    "copyright": "© 2026 Paraíso Motel",
+    "category": "Business",
+    "shortDescription": "Sistema de Recepção do Paraíso Motel",
+    "longDescription": "Aplicação de recepção (kiosk) para gestão de check-in, check-out, estoque, turnos e auditoria do Paraíso Motel.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "languages": ["PortugueseBR"]
+      }
+    }
+  }
+}
